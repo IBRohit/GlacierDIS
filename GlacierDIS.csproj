@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7CEA796A-1A87-4D06-8B71-5C205C08FF8D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GlacierDIS</RootNamespace>
+    <AssemblyName>GlacierDIS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessLogic\BusinessLogicClass.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\FundShare.cs" />
+    <Compile Include="Models\FundShareIndex.cs" />
+    <Compile Include="Models\GlacierDISContext.cs" />
+    <Compile Include="Models\ImportAudit.cs" />
+    <Compile Include="Models\ImportError.cs" />
+    <Compile Include="Models\ImportHeader.cs" />
+    <Compile Include="Models\Mapping\FundShareIndexMap.cs" />
+    <Compile Include="Models\Mapping\FundShareMap.cs" />
+    <Compile Include="Models\Mapping\ImportAuditMap.cs" />
+    <Compile Include="Models\Mapping\ImportErrorMap.cs" />
+    <Compile Include="Models\Mapping\ImportHeaderMap.cs" />
+    <Compile Include="Models\Mapping\PortfolioHoldingMap.cs" />
+    <Compile Include="Models\Mapping\RiskMeasureMap.cs" />
+    <Compile Include="Models\Mapping\TrailingReturnMap.cs" />
+    <Compile Include="Models\Mapping\TrailingReturnsDetailMap.cs" />
+    <Compile Include="Models\PortfolioHolding.cs" />
+    <Compile Include="Models\RiskMeasure.cs" />
+    <Compile Include="Models\TrailingReturn.cs" />
+    <Compile Include="Models\TrailingReturnsDetail.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XMLClass\XMLFundShareClass.cs" />
+    <Compile Include="XMLClass\XMLFundShareClassList.cs" />
+    <Compile Include="XMLClass\XMLHolding.cs" />
+    <Compile Include="XMLClass\XMLTrailingReturns.cs" />
+    <Compile Include="XMLClass\XMLVolatility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
